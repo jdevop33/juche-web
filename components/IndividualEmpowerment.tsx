@@ -54,7 +54,7 @@ export default function IndividualEmpowerment() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-8 text-lg"
         >
-          We honor the diversity of human experience and beliefs. Our community supports each individual's journey towards self-realization, recognizing that personal growth often involves both independence and interconnectedness.
+          We honor the diversity of human experience and beliefs. Our community supports each individual&apos;s journey towards self-realization, recognizing that personal growth often involves both independence and interconnectedness.
         </motion.p>
       </div>
     </section>

@@ -19,7 +19,7 @@ export default function LanguageToggle() {
     const newLanguage = language === 'en' ? 'ko' : 'en'
     setLanguage(newLanguage)
     localStorage.setItem('language', newLanguage)
-    router.push(pathname, { locale: newLanguage })
+    router.push(`/${newLanguage}${pathname}`)
   }
 
   return (

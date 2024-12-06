@@ -18,7 +18,7 @@ export default function SelfDefense() {
     {
       icon: FaExclamationTriangle,
       title: 'Conflict Avoidance',
-      description: 'While we're prepared to protect ourselves, our primary goal is to avoid conflict. We believe in diplomacy and mutual understanding as the first line of defense.'
+      description: 'While we\'re prepared to protect ourselves, our primary goal is to avoid conflict. We believe in diplomacy and mutual understanding as the first line of defense.'
     }
   ]
 

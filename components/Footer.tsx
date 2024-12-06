@@ -1,9 +1,9 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../app/hooks/useLanguage'
 
 export default function Footer() {
-  const language = useLanguage()
+  const language = useLanguage() as 'en' | 'ko'
 
   const content = {
     en: {

@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { FaHandshake, FaUserShield, FaBalanceScale, FaChartLine } from 'react-icons/fa'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../app/hooks/useLanguage'
 
 export default function OurApproach() {
-  const language = useLanguage()
+  const language = useLanguage() as 'en' | 'ko'
 
   const content = {
     en: {
@@ -14,7 +14,7 @@ export default function OurApproach() {
         {
           icon: FaUserShield,
           title: 'Ideological Self-Reliance',
-          description: 'We respect diverse beliefs while maintaining our united mission. Your beliefs are yours, and we're united in our goal to support and strengthen each other.'
+          description: 'We respect diverse beliefs while maintaining our united mission. Your beliefs are yours, and we\'re united in our goal to support and strengthen each other.'
         },
         {
           icon: FaChartLine,
@@ -24,7 +24,7 @@ export default function OurApproach() {
         {
           icon: FaHandshake,
           title: 'Collaborative Growth',
-          description: 'We're eager to work together to maximize value for humanity. Our partnerships are founded on equity, mutual benefit, and shared goals for societal improvement.'
+          description: 'We\'re eager to work together to maximize value for humanity. Our partnerships are founded on equity, mutual benefit, and shared goals for societal improvement.'
         },
         {
           icon: FaBalanceScale,

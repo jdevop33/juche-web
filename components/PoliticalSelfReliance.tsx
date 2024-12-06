@@ -8,7 +8,7 @@ export default function PoliticalSelfReliance() {
     {
       icon: FaGlobeAmericas,
       title: 'Respect for Diversity',
-      description: 'We honor the diversity of political beliefs, national identities, and cultural backgrounds. Every individual's heritage and citizenship are respected.'
+      description: "We honor the diversity of political beliefs, national identities, and cultural backgrounds. Every individual's heritage and citizenship are respected."
     },
     {
       icon: FaHandshake,

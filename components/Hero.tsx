@@ -2,10 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { FaFistRaised } from 'react-icons/fa'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../app/hooks/useLanguage'
+
+
+type LanguageKey = 'en' | 'ko'
 
 export default function Hero() {
-  const language = useLanguage()
+  const language = useLanguage() as LanguageKey
 
   const content = {
     en: {
