@@ -1,12 +1,12 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import OurApproach from './components/OurApproach'
-import PoliticalSelfReliance from './components/PoliticalSelfReliance'
-import SelfDefense from './components/SelfDefense'
-import IndividualEmpowerment from './components/IndividualEmpowerment'
-import CallToAction from './components/CallToAction'
-import Footer from './components/Footer'
+import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
+import About from '../components/About'
+import OurApproach from '../components/OurApproach'
+import PoliticalSelfReliance from '../components/PoliticalSelfReliance'
+import SelfDefense from '../components/SelfDefense'
+import IndividualEmpowerment from '../components/IndividualEmpowerment'
+import CallToAction from '../components/CallToAction'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (

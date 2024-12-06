@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useLanguage } from '../hooks/useLanguage'
+import { useLanguage } from '../app/hooks/useLanguage'
 
 export default function About() {
-  const language = useLanguage()
+  const language = useLanguage() as 'en' | 'ko'
 
   const content = {
     en: {
