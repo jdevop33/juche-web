@@ -1,0 +1,116 @@
+{
+  "title": "Honoring North Korean Heritage",
+  "meta": {
+    "description": "Explore the rich cultural heritage of North Korea through art, history, language, and music."
+  },
+  "pavilion_title": "Traditional Korean Pavilion",
+  "pavilion_description": "A serene space for reflection and cultural appreciation.",
+  "pavilion_image_alt": "Traditional Korean Pavilion",
+  "garden_title": "Korean Garden",
+  "cherry_blossom_alt": "Cherry Blossom Trees",
+  "koi_pond_alt": "Koi Pond",
+  "info_panel_title": "North Korean Culture",
+  "info_panel_content": "Discover the rich cultural heritage of North Korea, from its traditional arts to modern achievements.",
+  "timeline": {
+    "title": "Key Moments in North Korean History",
+    "1945": {
+      "title": "Liberation from Japanese Rule",
+      "description": "Korea gains independence from Japan after World War II."
+    },
+    "1948": {
+      "title": "Establishment of DPRK",
+      "description": "The Democratic People's Republic of Korea is officially established."
+    },
+    "1972": {
+      "title": "New Constitution",
+      "description": "A new constitution is adopted, emphasizing self-reliance and socialism."
+    },
+    "2011": {
+      "title": "Leadership Transition",
+      "description": "Kim Jong-un becomes the leader of North Korea."
+    },
+    "2018": {
+      "title": "Inter-Korean Summit",
+      "description": "Historic summit between North and South Korean leaders."
+    }
+  },
+  "symbols": {
+    "title": "Important Cultural Symbols",
+    "chollima": {
+      "name": "Chollima",
+      "description": "A mythical winged horse symbolizing speed and progress."
+    },
+    "kimIlSung": {
+      "name": "Kim Il-sung Flower",
+      "description": "A hybrid begonia symbolizing the eternal leadership of Kim Il-sung."
+    },
+    "juche": {
+      "name": "Juche Tower",
+      "description": "A monument representing the ideology of self-reliance."
+    }
+  },
+  "virtualTour": {
+    "title": "Virtual Tour of North Korea",
+    "jucheTower": {
+      "name": "Juche Tower",
+      "description": "A 170-meter tall tower in Pyongyang, symbolizing the Juche ideology."
+    },
+    "kimIlSungSquare": {
+      "name": "Kim Il-sung Square",
+      "description": "The main city square of Pyongyang, used for military parades and mass gatherings."
+    },
+    "ryugyongHotel": {
+      "name": "Ryugyong Hotel",
+      "description": "A 105-story pyramid-shaped skyscraper in Pyongyang, also known as the 'Hotel of Doom'."
+    },
+    "mansuHill": {
+      "name": "Mansu Hill Grand Monument",
+      "description": "Large bronze statues of Kim Il-sung and Kim Jong-il, a popular site for paying respects."
+    },
+    "close": "Close"
+  },
+  "traditionalArt": {
+    "title": "Traditional Korean Art Showcase",
+    "chosonghwa": {
+      "title": "Chosonghwa (조선화)",
+      "artist": "Various Artists",
+      "description": "Traditional Korean painting style characterized by its use of ink and watercolors on paper or silk."
+    },
+    "minhwa": {
+      "title": "Minhwa (민화)",
+      "artist": "Folk Artists",
+      "description": "Korean folk art paintings that often depict symbols of good fortune, happiness, and prosperity."
+    },
+    "ceramics": {
+      "title": "Goryeo Celadon",
+      "artist": "Goryeo Dynasty Artisans",
+      "description": "Exquisite green-glazed pottery from the Goryeo Dynasty, known for its jade-like color and intricate inlay designs."
+    },
+    "close": "Close"
+  },
+  "languageLearning": {
+    "title": "Learn Korean Words",
+    "prevWord": "Previous",
+    "nextWord": "Next",
+    "showTranslation": "Show Translation",
+    "hideTranslation": "Hide Translation"
+  },
+  "traditionalMusic": {
+    "title": "Traditional Korean Music",
+    "prevSong": "Previous",
+    "nextSong": "Next",
+    "song1": {
+      "title": "Arirang",
+      "artist": "Traditional"
+    },
+    "song2": {
+      "title": "Doraji Taryeong",
+      "artist": "Traditional"
+    },
+    "song3": {
+      "title": "Ganggangsullae",
+      "artist": "Traditional"
+    }
+  }
+}
+
