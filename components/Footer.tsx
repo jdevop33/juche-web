@@ -1,94 +1,170 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
-import Link from 'next/link'
-import { useLanguage } from '../app/hooks/useLanguage'
+'use client';
+
+import React, { useState, FormEvent } from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import Link from 'next/link';
+import { useLanguage } from '@/app/hooks/useLanguage';
+import { toast } from 'sonner';
+
+type FooterLink = {
+  name: string;
+  href: string;
+};
+
+type FooterSection = {
+  title: string;
+  links: FooterLink[];
+};
+
+type FooterContent = {
+  about: FooterSection;
+  community: FooterSection;
+  resources: FooterSection;
+  contact: FooterSection;
+  newsletter: {
+    title: string;
+    description: string;
+    placeholder: string;
+    button: string;
+    success: string;
+    error: string;
+  };
+  copyright: string;
+  socialLinks: {
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    youtube: string;
+  };
+};
+
+type ContentType = {
+  en: FooterContent;
+  ko: FooterContent;
+};
 
 export default function Footer() {
-  const language = useLanguage() as 'en' | 'ko'
+  const language = useLanguage() as 'en' | 'ko';
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const content = {
+  const content: ContentType = {
     en: {
       about: {
         title: "About",
         links: [
-          { name: "Our Philosophy", href: "#" },
-          { name: "Instructors", href: "#" },
-          { name: "Classes", href: "#" }
+          { name: "Our Philosophy", href: "/philosophy" },
+          { name: "Instructors", href: "/instructors" },
+          { name: "Classes", href: "/classes" }
         ]
       },
       community: {
         title: "Community",
         links: [
-          { name: "Events", href: "#" },
-          { name: "Blog", href: "#" },
-          { name: "Forum", href: "#" }
+          { name: "Events", href: "/events" },
+          { name: "Blog", href: "/blog" },
+          { name: "Forum", href: "/forum" }
         ]
       },
       resources: {
         title: "Resources",
         links: [
-          { name: "FAQs", href: "#" },
-          { name: "Training Videos", href: "#" },
-          { name: "Recommended Reading", href: "#" }
+          { name: "FAQs", href: "/faqs" },
+          { name: "Training Videos", href: "/videos" },
+          { name: "Recommended Reading", href: "/reading" }
         ]
       },
       contact: {
         title: "Contact",
         links: [
-          { name: "Get in Touch", href: "#" },
-          { name: "Locations", href: "#" },
-          { name: "Support", href: "#" }
+          { name: "Get in Touch", href: "/contact" },
+          { name: "Locations", href: "/locations" },
+          { name: "Support", href: "/support" }
         ]
       },
       newsletter: {
         title: "Subscribe to our newsletter",
         description: "Get the latest news and updates delivered straight to your inbox.",
         placeholder: "Enter your email",
-        button: "Subscribe"
+        button: "Subscribe",
+        success: "Thank you for subscribing!",
+        error: "Subscription failed. Please try again."
       },
-      copyright: "© 2023 Karate Empowerment. All rights reserved."
+      copyright: "© 2024 Karate Empowerment. All rights reserved.",
+      socialLinks: {
+        facebook: "Facebook",
+        twitter: "Twitter",
+        instagram: "Instagram",
+        youtube: "YouTube"
+      }
     },
     ko: {
       about: {
         title: "소개",
         links: [
-          { name: "우리의 철학", href: "#" },
-          { name: "강사진", href: "#" },
-          { name: "수업", href: "#" }
+          { name: "우리의 철학", href: "/philosophy" },
+          { name: "강사진", href: "/instructors" },
+          { name: "수업", href: "/classes" }
         ]
       },
       community: {
         title: "커뮤니티",
         links: [
-          { name: "이벤트", href: "#" },
-          { name: "블로그", href: "#" },
-          { name: "포럼", href: "#" }
+          { name: "이벤트", href: "/events" },
+          { name: "블로그", href: "/blog" },
+          { name: "포럼", href: "/forum" }
         ]
       },
       resources: {
         title: "자료",
         links: [
-          { name: "자주 묻는 질문", href: "#" },
-          { name: "트레이닝 비디오", href: "#" },
-          { name: "추천 도서", href: "#" }
+          { name: "자주 묻는 질문", href: "/faqs" },
+          { name: "트레이닝 비디오", href: "/videos" },
+          { name: "추천 도서", href: "/reading" }
         ]
       },
       contact: {
         title: "연락처",
         links: [
-          { name: "문의하기", href: "#" },
-          { name: "위치", href: "#" },
-          { name: "지원", href: "#" }
+          { name: "문의하기", href: "/contact" },
+          { name: "위치", href: "/locations" },
+          { name: "지원", href: "/support" }
         ]
       },
       newsletter: {
         title: "뉴스레터 구독",
         description: "최신 소식과 업데이트를 이메일로 받아보세요.",
         placeholder: "이메일 주소 입력",
-        button: "구독하기"
+        button: "구독하기",
+        success: "구독해 주셔서 감사합니다!",
+        error: "구독에 실패했습니다. 다시 시도해 주세요."
       },
-      copyright: "© 2023 가라테 엠파워먼트. 모든 권리 보유."
+      copyright: "© 2024 가라테 엠파워먼트. 모든 권리 보유.",
+      socialLinks: {
+        facebook: "Facebook",
+        twitter: "Twitter",
+        instagram: "Instagram",
+        youtube: "YouTube"
+      }
     }
-  }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Simulate an API call
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      toast.success(content[language].newsletter.success)
+      setEmail('');
+    } catch (error: unknown) {
+      console.error(error);
+      toast.error(content[language].newsletter.error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-black text-white">
@@ -155,7 +231,7 @@ export default function Footer() {
             <p className="mt-4 text-base text-gray-300">
               {content[language].newsletter.description}
             </p>
-            <form className="mt-4 sm:flex sm:max-w-md">
+            <form className="mt-4 sm:flex sm:max-w-md" onSubmit={handleSubmit}>
               <label htmlFor="email-address" className="sr-only">
                 {content[language].newsletter.placeholder}
               </label>
@@ -167,13 +243,17 @@ export default function Footer() {
                 required
                 className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
                 placeholder={content[language].newsletter.placeholder}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
               />
               <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
                   className="w-full bg-dancheong-red border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-dancheong-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-dancheong-red"
+                  disabled={isSubmitting}
                 >
-                  {content[language].newsletter.button}
+                  {isSubmitting ? 'Submitting...' : content[language].newsletter.button}
                 </button>
               </div>
             </form>
@@ -182,19 +262,19 @@ export default function Footer() {
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             <Link href="#" className="text-gray-400 hover:text-gray-300">
-              <span className="sr-only">Facebook</span>
+              <span className="sr-only">{content[language].socialLinks.facebook}</span>
               <FaFacebook className="h-6 w-6" />
             </Link>
             <Link href="#" className="text-gray-400 hover:text-gray-300">
-              <span className="sr-only">Twitter</span>
+              <span className="sr-only">{content[language].socialLinks.twitter}</span>
               <FaTwitter className="h-6 w-6" />
             </Link>
             <Link href="#" className="text-gray-400 hover:text-gray-300">
-              <span className="sr-only">Instagram</span>
+              <span className="sr-only">{content[language].socialLinks.instagram}</span>
               <FaInstagram className="h-6 w-6" />
             </Link>
             <Link href="#" className="text-gray-400 hover:text-gray-300">
-              <span className="sr-only">YouTube</span>
+              <span className="sr-only">{content[language].socialLinks.youtube}</span>
               <FaYoutube className="h-6 w-6" />
             </Link>
           </div>
@@ -204,6 +284,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
