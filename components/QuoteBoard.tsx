@@ -1,8 +1,6 @@
-import { useTranslation } from 'next-i18next'
+import React from 'react'
 
 const QuoteBoard: React.FC = () => {
-  const { t } = useTranslation('common')
-
   const quotes = [
     { key: 'quote1', korean: "평화와 화합을 기원합니다.", english: "We Wish for Peace and Harmony." },
     { key: 'quote2', korean: "강인한 정신과 단합된 마음으로 미래를 건설합시다.", english: "Let Us Build the Future with Strong Spirit and United Hearts." },

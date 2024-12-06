@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import { screen } from '@testing-library/react/pure'
 import ChollimaSculpture from '../components/ChollimaSculpture'
 
 describe('ChollimaSculpture', () => {
@@ -8,4 +9,13 @@ describe('ChollimaSculpture', () => {
     expect(image).toBeInTheDocument()
   })
 })
+function expect(element: HTMLElement) {
+  return {
+    toBeInTheDocument: () => {
+      if (!document.body.contains(element)) {
+        throw new Error(`Expected element to be in the document, but it was not found`)
+      }
+    }
+  }
+}
 
