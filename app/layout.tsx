@@ -1,12 +1,34 @@
-import './globals.css'
+import '@/styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { GeistSans } from 'geist/font/sans'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Karate Empowerment',
+  title: 'Juche Empowerment',
   description: 'Embracing Self-Reliance, Global Respect, and Personal Responsibility through Karate',
+  openGraph: {
+    title: 'Juche Empowerment',
+    description: 'Embracing Self-Reliance, Global Respect, and Personal Responsibility through Karate',
+    url: 'https://juche.org',
+    siteName: 'Karate Empowerment',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Karate Empowerment',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Karate Empowerment',
+    description: 'Embracing Self-Reliance, Global Respect, and Personal Responsibility through Karate',
+    images: ['/og-image.jpg'],
+  },
 }
 
 export default function RootLayout({
@@ -16,7 +38,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${GeistSans.className} antialiased min-h-screen flex flex-col`}>
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }
