@@ -41,6 +41,14 @@ const TraditionalMusicPlayer: React.FC = () => {
     }
   }, [currentSongIndex, isPlaying])
 
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  }, [isPlaying, songs]); // Added songs to dependencies
+
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying)
   }

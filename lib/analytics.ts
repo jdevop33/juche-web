@@ -19,6 +19,12 @@ export const event = ({ action, category, label, value }: {
   })
 }
 
+export function trackEvent(...args: any[]) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag(...args);
+  }
+}
+
 // Microsoft Clarity
 export const CLARITY_PROJECT_ID = 'XXXXXXXXXX' // Replace with your Microsoft Clarity project ID
 
